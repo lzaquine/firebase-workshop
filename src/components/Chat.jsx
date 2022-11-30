@@ -15,7 +15,9 @@ function Chat() {
   
 
   /* Step 13- below */
-
+  const messagesRef = firestore.collection("messages");
+  const q = messagesRef.orderBy("createdAt");
+  const [messages] = useCollectionData(q, { idField: "id" });
 
   /* Step 20- below */
   const scroll = useRef();
