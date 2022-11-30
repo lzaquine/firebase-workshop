@@ -5,9 +5,254 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffe4e4;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+#gbtn {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+}
+ .google-btn {
+	 width: 184px;
+	 height: 42px;
+	 background-color: #4285f4;
+	 border-radius: 2px;
+	 box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+}
+ .google-btn .google-icon-wrapper {
+	 position: absolute;
+	 margin-top: 1px;
+	 margin-left: 1px;
+	 width: 40px;
+	 height: 40px;
+	 border-radius: 2px;
+	 background-color: #fff;
+}
+ .google-btn .google-icon {
+	 position: absolute;
+	 margin-top: 11px;
+   right: 10px;
+	 width: 18px;
+	 height: 18px;
+}
+ .google-btn .btn-text {
+	 float: right;
+	 margin: 11px 11px 0 0;
+	 color: #fff;
+	 font-size: 14px;
+	 letter-spacing: 0.2px;
+	 font-family: "Roboto";
+}
+ .google-btn:hover {
+	 box-shadow: 0 0 6px #4285f4;
+}
+ .google-btn:active {
+	 background: #1669f2;
+}
+.githubBtn {
+  font-size: 17px;
+  padding: 6px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+}
+
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(177, 177, 177);
+  color: white;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 8px 8px 8px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #4285f4;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4285f4;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px;
+  margin-top: 20px;
+}
+
+input {
+  width: 39.7vw;
+  font-size: 18px;
+  font-weight: 700;
+  height: 4vw;
+  text-align: center;
+  border: 1px solid #e7f0ff;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+.sendBtn{
+  margin-top: 10px;
+  margin-bottom: -70px;
+  font-weight: 600;
+  font-size: 16px;
+  width: 6vw;
+  height: 2vw;
+  background-color: white;
+  border: 0;
+  border-radius: 10px;
+  background-color: #4285f4;
+  color: white;
+}
+
+main {
+  margin-bottom: 25px;
+  background-color: #e1ebfb;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;  width: 100vw;
+}
+
+#imgProfile {
+  width: 50px;
+  border-radius: 35px;
+  margin: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  align-self: flex-end;
+  background-color: #87b2f8;
+  border-radius: 20px;
+  width: 10vw;
+  padding: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.received p {
+  background-color: #5dd68a;
+  border-radius: 20px;
+  width: 10vw;
+  padding: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.signout {
+  margin-top: 25px;
+  margin-bottom: -25px;
+
+}
+
+#chatMain {
+  width: 40vw;
+  margin-top: 50px;
+}
+
+#chatDiv {
+  display: flex;
+  justify-content: center;
+}
+
+#authDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+}
+
+#ironhack {
+  width: 180px;
+  margin-bottom: -100px;
+  margin-top: 50px;
+}
+
+#ironRight {
+  position: fixed;
+  width: 50px;
+  top: 50vh;
+  left: 85vw;
+}
+
+#ironLeft {
+  position: fixed;
+  width: 50px;
+  top: 50vh;
+  left: 15vw;
+}
+
+.pChat {
+  background-color: #d0e1fd;
+  padding: 5px;
+  border-radius: 2px;
+  font-weight: 800;
 }

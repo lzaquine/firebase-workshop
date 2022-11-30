@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import SignIn from "./pages/SignIn";
+import Chat from './pages/Chat'
+import { Routes, Route } from "react-router-dom";
+
+/* Step 8- below */
+import { useAuthState } from "react-firebase-hooks/auth";
+
+/* Step 7- below */
+
 
 function App() {
+  
+  /* Step 8- below */
+  const [user] = useAuthState(auth);
+  console.log(user);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+      {/* Below, if there's an user, show the Chat, if there isn't, show the SignIn */}
+        <Route path="/" />
+      </Routes>
     </div>
   );
 }
