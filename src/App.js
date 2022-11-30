@@ -1,6 +1,6 @@
 import './App.css';
-import SignIn from "./pages/SignIn";
-import Chat from './pages/Chat'
+import SignIn from "./components/SignIn";
+import Chat from './components/Chat'
 import { Routes, Route } from "react-router-dom";
 
 /* Step 8- below */
