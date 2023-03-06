@@ -1,35 +1,43 @@
-import React from 'react'
+import React from "react";
 import googlelogo from "../Google__G__Logo.svg";
 import ironhack from "../ironhack.png.webp";
+import firebase from "../FirebaseConfig";
+import {
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
+  signInAnonymously,
+} from "firebase/auth";
 
-
-
-/* Step 6- below */
-
-
-firebase.initializeApp({
-    //your config goes here:
-
-});
-
-
+const auth = firebase.auth();
 
 function SignIn() {
-  
-  /* Step 10- below */
-  
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
 
+    signInWithPopup(auth, provider);
+    console.log(provider);
+  };
+
+  const signInWithGithub = () => {
+    const provider = new GithubAuthProvider();
+
+    signInWithPopup(auth, provider);
+
+    console.log(provider);
+  };
+
+  const signInAnon = () => {
+    signInAnonymously(auth);
+    console.log("Signed in anonymously");
+  };
 
   return (
     <>
       <img id="ironhack" src={ironhack} alt="ironhack" />
       <div id="authDiv">
         <div id="gbtn" style={{ marginTop: "10px" }}>
-          <div className="google-btn" 
-
-        {/* Step 9- below */}
-          onClick={signInWithGoogle}>
-
+          <div className="google-btn" onClick={signInWithGoogle}>
             <div className="google-icon-wrapper">
               <img className="google-icon" src={googlelogo} alt="google sign" />
             </div>
@@ -37,11 +45,8 @@ function SignIn() {
           </div>
         </div>
         <button
-
-        {/* Step 9- below */}
-          onClick={signInWithGithub}
-
           className="btn-text githubBtn"
+          onClick={signInWithGithub}
           style={{ marginTop: "10px" }}
         >
           <svg
@@ -54,10 +59,10 @@ function SignIn() {
           </svg>{" "}
           Sign in with Github{" "}
         </button>
-
+        <button onClick={signInAnon}>Sign In Anon</button>
       </div>
     </>
   );
 }
 
-export default SignIn
+export default SignIn;

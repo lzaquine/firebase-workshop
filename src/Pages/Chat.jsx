@@ -1,40 +1,28 @@
-import React from 'react'
+import React from "react";
 import ironhack from "../ironhack.png.webp";
-import SignOut from './SignOut';
-import Messages from './Messages';
+import SignOut from "./SignOut";
+import Messages from "./Messages";
 import { useState, useRef } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-
-
-
-/* Step 7- below */
-
-
+import firebase from "../FirebaseConfig";
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 function Chat() {
-  
-
-  /* Step 13- below */
   const messagesRef = firestore.collection("messages");
   const q = messagesRef.orderBy("createdAt");
   const [messages] = useCollectionData(q, { idField: "id" });
 
-  /* Step 20- below */
   const scroll = useRef();
 
-
-  /* Step 17- below */
   const [formValue, setFormValue] = useState("");
   const handleValue = (e) => setFormValue(e.target.value);
 
-  
-  /* Step 18- below */
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const { uid, photoURL, displayName } = auth.currentUser;
-    
-    /* Step 19- below */
+
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -42,11 +30,9 @@ function Chat() {
       photoURL,
       displayName,
     });
-    
 
     setFormValue("");
 
-    /* Step 20- below */
     scroll.current.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -62,29 +48,15 @@ function Chat() {
           <div className="pChat">
             <p className="pChat">Firebase Chat</p>
           </div>
-
-
-          {/* Step 14- below */}
           {messages &&
-              messages.map((msg) => <Messages key={msg.id} message={msg} />)}
-          
-
-          {/* Step 20- below */}
+            messages.map((msg) => <Messages key={msg.id} message={msg} />)}
           <div ref={scroll}></div>
-
-
-          {/* Step 18- below */}
           <form onSubmit={handleSubmit}>
-
-
-          {/* Step 17- below */}
             <input
               value={formValue}
               onChange={handleValue}
               placeholder="Type your message here"
             />
-
-
             <button className="button-57 sendBtn" type="submit">
               <span className="text">Send 💬</span>
               <span>Yay!!! 🥰</span>
@@ -96,4 +68,5 @@ function Chat() {
   );
 }
 
-export default Chat
+export default Chat;
+

@@ -1,25 +1,21 @@
-import './App.css';
-import SignIn from "./components/SignIn";
-import Chat from './components/Chat'
+import "./App.css";
+import NotFound from "./Pages/NotFound";
+import SignIn from "./Pages/SignIn";
+import Chat from './Pages/Chat'
 import { Routes, Route } from "react-router-dom";
-
-/* Step 8- below */
 import { useAuthState } from "react-firebase-hooks/auth";
-
-/* Step 7- below */
-
+import firebase from './FirebaseConfig'
+const auth = firebase.auth();
 
 function App() {
-  
-  /* Step 8- below */
   const [user] = useAuthState(auth);
-  console.log(user);
 
+  console.log(user);
   return (
     <div className="App">
       <Routes>
-      {/* Below, if there's an user, show the Chat, if there isn't, show the SignIn */}
-        <Route path="/" />
+        <Route path="/" element={user ? <Chat /> : <SignIn />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
