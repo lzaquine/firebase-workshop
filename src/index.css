@@ -26,6 +26,10 @@ code {
 	 background-color: #4285f4;
 	 border-radius: 2px;
 	 box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+   cursor: pointer;
+}
+.google-btn:hover {
+  scale: 102%;
 }
  .google-btn .google-icon-wrapper {
 	 position: absolute;
@@ -61,6 +65,10 @@ code {
   font-size: 17px;
   padding: 6px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+  cursor: pointer;
+}
+.githubBtn:hover {
+  scale: 102%;
 }
 
 .button-57 {
@@ -164,6 +172,10 @@ input::placeholder {
   color: white;
 }
 
+.sendBtn:hover{
+  scale: 105%;
+}
+
 main {
   margin-bottom: 25px;
   background-color: #e1ebfb;
@@ -210,6 +222,9 @@ main {
   margin-bottom: -25px;
 
 }
+.signout:hover{
+    scale: 105%;
+}
 
 #chatMain {
   width: 40vw;
@@ -255,4 +270,14 @@ main {
   padding: 5px;
   border-radius: 2px;
   font-weight: 800;
+}
+
+.anonBtn{
+  width: 50px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.anonBtn:hover {
+  scale: 107%;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import googlelogo from "../Google__G__Logo.svg";
 import ironhack from "../ironhack.png.webp";
 import firebase from "../FirebaseConfig";
+import anonImg from "../anon.png"
 import {
   GoogleAuthProvider,
   GithubAuthProvider,
@@ -59,7 +60,7 @@ function SignIn() {
           </svg>{" "}
           Sign in with Github{" "}
         </button>
-        <button onClick={signInAnon}>Sign In Anon</button>
+        <img src={anonImg} alt="Anonymous Mask" onClick={signInAnon} className='anonBtn'/>
       </div>
     </>
   );
