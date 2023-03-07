@@ -7,7 +7,7 @@ const config = {
   apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   authDomain: process.env.REACT_APP_GOOGLE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_GOOGLE_PROJECTID,
-  storageBucket: process.env.REACT_APP_GOOGLE_STORAGE_BUCKERT,
+  storageBucket: process.env.REACT_APP_GOOGLE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_GOOGLE_MESSAGING_SENDERID,
   appId: process.env.REACT_APP_GOOGLE_APPID,
   measurementId: process.env.REACT_APP_GOOGLE_MEASUREMENTID
