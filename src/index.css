@@ -243,6 +243,7 @@ main {
   align-items: center;
   width: 100vw;
   height: 50vh;
+  margin-top: 125px;
 }
 
 #ironhack {
@@ -280,4 +281,15 @@ main {
 
 .anonBtn:hover {
   scale: 107%;
+}
+
+.fireSS{
+  margin-top: 25px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #b2b8c2;
+}
+
+.fireSS:hover {
+  scale: 105%;
 }

@@ -61,6 +61,7 @@ function SignIn() {
           Sign in with Github{" "}
         </button>
         <img src={anonImg} alt="Anonymous Mask" onClick={signInAnon} className='anonBtn'/>
+        <a rel="noopener noreferrer" href="https://www.canva.com/design/DAFb4Rd_9Gg/Fhsl29teiBYp8w5ryDx9vA/view?utm_content=DAFb4Rd_9Gg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><img className="fireSS" src="../../../FirebaseSS.jpg" alt="Firebase Presentation"/></a>
       </div>
     </>
   );
