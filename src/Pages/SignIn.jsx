@@ -48,7 +48,6 @@ function SignIn() {
         <button
           className="btn-text githubBtn"
           onClick={signInWithGithub}
-          style={{ marginTop: "10px" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
